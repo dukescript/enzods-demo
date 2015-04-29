@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LED Demo</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    </head>
+    <body>
+    <led params="on: on, id: id" data-bind="attr: {id: id}"></led>
+    <br>
+        <button data-bind="click: turnOn">ON</button>
+        <button data-bind="click: turnOff">OFF</button>
+        <!-- boot bck2brwsr -->
+        <script type="text/javascript" src="bck2brwsr.js"></script>
+        <script>
+            var vm = bck2brwsr('enzods.js');
+            var c = vm.loadClass('com.dukescript.enzods.BrowserMain');
+            c.invoke('main');
+        </script>
+    </body>
+</html>
