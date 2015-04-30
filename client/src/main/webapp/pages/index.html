@@ -7,10 +7,11 @@
 
     </head>
     <body>
-    <led params="on: on, id: id" data-bind="attr: {id: id}"></led>
-    <br>
+        <div data-bind="foreach: leds">
+            <led params="on: on, id: id, parentId : parentId" data-bind="attr: {id: parentId}"></led>
         <button data-bind="click: turnOn">ON</button>
         <button data-bind="click: turnOff">OFF</button>
+        </div>
         <!-- boot bck2brwsr -->
         <script type="text/javascript" src="bck2brwsr.js"></script>
         <script>

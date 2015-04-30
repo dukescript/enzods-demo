@@ -22,12 +22,21 @@ public final class Main {
      * Called when the page is ready.
      */
     public static void onPageLoad() throws Exception {
-        LEDViewModel ledViewModel = new LEDViewModel(true, "container");
+        LEDViewModel ledViewModel = new LEDViewModel(true, "container", "control0");
        // this call to Models.toRaw initializes Knockout
        // so we can register the LED component.
         Models.toRaw(ledViewModel);
         LED.registerLED();
-        ledViewModel.applyBindings();
+        LedBoard ledBoard = new LedBoard();
+        ledBoard.getLeds().add(new LEDViewModel(true,"led1","control1"));
+        ledBoard.getLeds().add(new LEDViewModel(true,"led2","control2"));
+        ledBoard.getLeds().add(new LEDViewModel(false,"led3","control3"));
+        ledBoard.getLeds().add(new LEDViewModel(true,"led4","control4"));
+        ledBoard.getLeds().add(new LEDViewModel(true,"led5","control5"));
+        ledBoard.getLeds().add(new LEDViewModel(true,"led6","control6"));
+        ledBoard.getLeds().add(new LEDViewModel(true,"led7","control7"));
+        ledBoard.applyBindings();
+//        ledViewModel.applyBindings();
     }
 
 }
